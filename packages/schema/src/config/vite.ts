@@ -21,6 +21,7 @@ export default defineUntypedSchema({
     },
     define: {
       $resolve: async (val, get) => ({
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: await get('debug'),
         'process.dev': await get('dev'),
         'import.meta.dev': await get('dev'),
         'process.test': isTest,
